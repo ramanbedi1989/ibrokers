@@ -1,0 +1,37 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+body{
+	font-family: franklin-gothic-urw-n4, franklin-gothic-urw, arial, sans-serif;
+}
+
+.header-links{
+	list-style-type: none; 
+	float:left;
+}
+
+.header-links>li{
+	float: left;
+	border-right: 1px solid gray;
+	padding: 0 5px;
+}
+.header-links>li:last-child{
+	border-right: none;
+}
+.header-links>li a{
+	color: #004197;
+}
+.header-links>li a:hover{
+	color: #0060D6;
+	text-decoration: none;
+}
