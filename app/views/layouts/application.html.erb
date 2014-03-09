@@ -8,26 +8,95 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="header row-fluid">
-			<div class="span7">
-
+		<div class="header row">
+			<div class="col-sm-3">
+				<img src="<%= asset_path("IBL Logo.jpg", type: :image) %>" alt="Logo" />
 			</div>
-			<div class="span5">
-				<ul class="header-links">
-					<li><a href="#">Customer service</a></li>
-					<li><a href="#">File a claim</a></li>
-					<li><a href="#">Contact us</a></li>
-					<li><a href="#">f</a></li>
-					<li><a href="#">t</a></li>
-				</ul>
-				<div class="btn-group">
-					<button class="btn">Left</button>
-					<button class="btn">Right</button>
+			<div class="col-sm-9 header-height">
+				<div class="pull-right">
+					<ul class="header-links">
+						<li><a href="#" class="blue-link">Customer service</a></li>
+						<li><a href="#" class="blue-link">File a claim</a></li>
+						<li><a href="#" class="blue-link">Contact us</a></li>
+						<li><a href="#" class="blue-link"><span class="icon icon-facebook"></span></a></li>
+						<li><a href="#" class="blue-link"><span class="icon icon-twitter"></span></a></li>
+					</ul>
+					<div class="btn-group">
+						<a href="#" class="btn btn-primary">LOGIN</a>
+						<a href="#" class="btn btn-primary">REGISTER</a>
+					</div>
 				</div>
 			</div>
 		</div>
+		<div class="row subheader-borders">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#">EXPLORE YOUR GOALS <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#">VIEW PRODUCTS <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#">ABOUT IBROKERS <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul>
+				</li>
+			</ul>
+			<form id="search-form" class="nav navbar-form navbar-right" role="search">
+				<div class="form-group">
+					<input type="text" class="search-input" placeholder="Search">
+				</div>
+				<button type="submit" class="search-button"><span class="glyphicon glyphicon-search search-icon"></span></button>
+			</form>
+		</div>
 	</div>
-	<%= yield %>
-
+	<div class="container-fluid">
+		<%= yield %>	
+	</div>
+	<div class="footer container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="pull-left">
+				Copyright &copy; 2011-2014 IBL. All rights reserved.
+			</div>
+			<div class="pull-right">
+				<ul class="footer-links-list">
+					<li>
+						<a href="#" class="blue-link footer-link">Online Privacy and Security Statement</a>
+					</li>
+					<li>
+						<a href="#" class="blue-link footer-link">Usage Agreement</a>
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+	</div>		
+	</div>
 </body>
 </html>

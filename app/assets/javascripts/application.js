@@ -10,7 +10,27 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery-1.8.2.min
+//= require bxslider
+//= require noconflict
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).scroll(function() {
+    checkOffset();
+});
+
+$(window).resize(function(){
+	checkOffset();
+});
+
+var checkOffset = function(){
+	if($('.arrow-down').offset().top + $('.arrow-down').outerHeight() > $(window).scrollTop() + $(window).height()){
+		$('.fixed-footer').css('position','fixed');
+	}else{
+		$('.fixed-footer').css('position','static');
+	}
+}

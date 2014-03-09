@@ -1,0 +1,15 @@
+<% categories.each do |category| %>
+<div class="slide">
+	<div class="row">
+		<div class="col-xs-4">
+			<img src="<%= category[:image] %>">
+		</div>
+		<div class="col-xs-8">
+			<h3><%= category[:title] %></h3>
+			<hr>
+			<p><%= category[:description] %></p>
+			<a href="<%= category[:url] %>"><span class="text">Learn more</span></a>
+		</div>
+	</div>
+</div>
+<% end %>

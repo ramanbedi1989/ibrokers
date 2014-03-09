@@ -9,29 +9,254 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bxslider
  *= require_tree .
  */
+ 
 body{
 	font-family: franklin-gothic-urw-n4, franklin-gothic-urw, arial, sans-serif;
 }
 
+.header-height{
+	margin-top: 85px;
+}
+
+.subheader-borders{
+	border-top: 1px solid #ECECEC;
+	border-bottom: 3px solid #0060d6;
+}
+
+.subheader-borders>ul.nav>li>a{
+	text-align: center;
+	font-size: 1em;
+	color: #616367;
+	text-transform: uppercase;
+	font-family: "franklin-gothic-urw", sans-serif;
+	border-bottom: 3px solid transparent;
+}
+.subheader-borders>ul.nav>li>a:hover, .subheader-borders>ul.nav>li>a:focus, .subheader-borders>ul.nav>li:hover>a{
+	color:#123084;
+	background-color: #fff;
+	border-bottom: 3px solid #0060d6;
+}
+
+.subheader-borders>ul.nav>li:hover>ul.dropdown-menu{
+	display: block;
+}
+
 .header-links{
+	padding-top: 5px;
+	margin-right: 10px;
 	list-style-type: none; 
 	float:left;
 }
 
 .header-links>li{
 	float: left;
-	border-right: 1px solid gray;
+	border-right: 1px solid #ECECEC;
 	padding: 0 5px;
 }
 .header-links>li:last-child{
 	border-right: none;
 }
-.header-links>li a{
+
+.search-input{
+	border: 1px solid transparent;
+	outline: 0;
+}
+
+.search-button{
+	background: none;
+	border:0px;
+	font-size: 1.33em;
+}
+
+#search-form{
+	margin-right: 0px;
+	border-left: 1px solid #ECECEC;
+}	
+
+.imageshow{
+	height: 441px;
+}
+
+.imageshow-background{
+	background-size: 100% 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	position: relative;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.advice-background{
+	background-image: url('abc.jpg');
+}
+
+.retirement-background{
+	background-image: url('abc.jpg');
+}
+
+.life-background{
+	background-image: url('abc.jpg');
+}
+
+.imageshow-content{
+	position: absolute;
+	top: 40%;
+	text-align: center;
+	width:100%;
+	color: #fff;
+	z-index: 2;
+}
+
+.imageshow-content h2{
+	font-family: "franklin-gothic-urw",sans-serif;
+}
+
+.imageshow-content hr{
+	width: 68px;
+	background-color: #fff;
+	margin: 22px auto;
+}
+
+.imageshow-background .blur-background{
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index: 1;
+	transition: all 1s;
+}
+
+.imageshow-background:hover .blur-background{
+	background-color:#0060d6;
+	opacity: 0.7;
+}
+
+.question{
+	background-color: #F2F2F2;
+	height: 110px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.question h3{
+	font-family: "franklin-gothic-urw-n4","franklin-gothic-urw", sans-serif;
+	font-style: normal;
+	font-size: 1.25em;
+	line-height: 2.55em;
+}
+
+.arrow-down{
+	background-image: url('down-arrow.png');
+	background-repeat: no-repeat;
+	background-position: top center;
+	margin-top: 0px;
+	padding-top: 10px;
+}
+
+.slide hr{
+	border: 0 none;
+	background-color: #f2f2f2;
+	height: 1px;
+	width: 15%;
+	margin-left: 0px;
+}
+
+.slide{
+	padding: 0 15px;
+}
+
+.slide h3{
+	text-transform: uppercase;
+	font-size: 1em;
+}
+
+.arrow-down .bx-wrapper .bx-viewport{
+	box-shadow: none;
+	border: none;
+	background: none;
+}
+
+.fixed-footer{
+	background-color: #012F87;
+	color: #fff;
+	max-height: 64px;
+	-webkit-box-shadow: 0 0 7px #ccc;
+	box-shadow: 0 0 7px #ccc;
+	-moz-box-shadow: 0 0 7px #ccc;
+	z-index: 500;
+	font-size: 1em;
+	width:100%;
+	bottom:0px;
+}
+
+.fixed-footer a{
+	color: #fff;
+	line-height: 4.4em;
+}
+
+.fixed-footer a:hover{
+	color: #fff;
+}
+
+.services{
+	border-top: 1px solid #ECECEC;
+	line-height: 32.5px;
+	font-size: 15px;
+}
+
+.services-title{
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.plans{
+	margin-bottom: 30px;
+}
+
+a.blue-link{
 	color: #004197;
 }
-.header-links>li a:hover{
+
+a.blue-link:hover{
 	color: #0060D6;
 	text-decoration: none;
+}
+
+.services-line-break{
+	background-color: #0060d6;
+	height:3px;
+}
+
+.about-us{
+	margin-bottom: 30px;
+}
+
+.footer{
+	background-color: #ebebeb;
+	font-size: 12px;
+}
+
+.footer-links-list{
+	list-style-type: none; 
+}
+
+.footer-links-list>li{
+	float: left;
+	border-right: 1px solid #ECECEC;
+	padding: 0 5px;
+}
+
+a.footer-link{
+	font-size: 12px;
+}
+
+.search-icon{
+	color: rgb(199, 193, 193);
+}
+
+.icon{
+	font-size: 16px;
 }
