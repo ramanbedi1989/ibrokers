@@ -103,7 +103,7 @@ body{
 
 .imageshow-content{
 	position: absolute;
-	top: 40%;
+	top: 33%;
 	text-align: center;
 	width:100%;
 	color: #fff;
@@ -119,6 +119,16 @@ body{
 	background-color: #fff;
 	margin: 22px auto;
 }
+
+.imageshow-background a.learn-more{
+	margin-top: 10px;
+	display: none;
+}
+
+.imageshow-background:hover a.learn-more{
+	display: inline-block;
+}
+
 
 .imageshow-background .blur-background{
 	position:absolute;
