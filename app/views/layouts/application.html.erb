@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ibrokers</title>
+	<title><%= @page_title || "Ibrokers" %></title>
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="wrap">
 	<div class="container-fluid">
 		<div class="header row">
 			<div class="col-sm-3">
-				<img src="<%= asset_path("IBL Logo.png", type: :image) %>" alt="Logo" />
+				<%= link_to image_tag("IBL Logo.png", alt: "Logo"), root_url %>
 			</div>
 			<div class="col-sm-9 header-height">
 				<div class="pull-right">
@@ -26,24 +27,24 @@
 		<div class="row subheader-borders">
 			<ul class="nav navbar-nav">
 				<li class="dropdown">
-					<a href="#">ABOUT IBL<b class="caret"></b></a>
+					<a class="nav-subheading" href="#">ABOUT IBL<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Vision</a></li>
-						<li><a href="#">Why Us</a></li>
+						<li><%= link_to 'Vision', about_us_path %></li>
+						<li><%= link_to 'Why Us', why_ibrokers_path %></li>
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a href="#">SERVICE AND PRODUCTS<b class="caret"></b></a>
+					<a class="nav-subheading" href="#">SERVICE AND PRODUCTS<b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Personal</a></li>
 						<li><a href="#">Business</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a href="#">ADVICE<b class="caret"></b></a>
+					<a class="nav-subheading" href="#">ADVICE<b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Your Risk</a></li>
-						<li><a href="#">Why Use A Broker</a></li>
+						<li><%= link_to 'Why Use A Broker', why_ibrokers_path %></li>
 						<li><a href="#">Insurance Partner</a></li>
 						<li><a href="#">ACC Cover + Extra</a></li>
 					</ul>
@@ -53,6 +54,7 @@
 	</div>
 	<div class="container-fluid">
 		<%= yield %>	
+	</div>
 	</div>
 	<div class="footer container-fluid">
 	<div class="row">

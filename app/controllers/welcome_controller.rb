@@ -7,4 +7,12 @@ class WelcomeController < ApplicationController
   		{image: 'assets/carousel-image.png',title: 'win a trip to fiji' , description: 'Our website has changed, but our commitment to you never will.', url: '#'}
   	]
   end
+
+  def about_us
+  	@page_title = "Ibrokers - About Us"
+  end
+
+  def why_ibrokers
+  	@page_title = "Ibrokers - Why Us"
+  end
 end
