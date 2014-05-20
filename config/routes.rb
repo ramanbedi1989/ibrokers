@@ -1,6 +1,8 @@
 Ibrokers::Application.routes.draw do
 
   get "welcome/index"
+  get "/about_us", to: "welcome#about_us"
+  get "/why_ibrokers", to: "welcome#why_ibrokers"
   root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
