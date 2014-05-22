@@ -12,7 +12,33 @@
  *= require bxslider
  *= require_tree .
  */
- 
+
+ /* Sticky footer styles
+-------------------------------------------------- */
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+.footer {
+  height: 60px;
+  line-height: 60px;
+}
+
+/* Sticky footer styles end
+--------------------------------------------------  */
 body{
 	font-family: franklin-gothic-urw-n4, franklin-gothic-urw, arial, sans-serif;
 }
@@ -90,20 +116,20 @@ body{
 }
 
 .advice-background{
-	background-image: url('abc.jpg');
+	background-image: url('crousel1.JPG');
 }
 
 .retirement-background{
-	background-image: url('abc.jpg');
+	background-image: url('crousel2.JPG');
 }
 
 .life-background{
-	background-image: url('abc.jpg');
+	background-image: url('crousel1.JPG');
 }
 
 .imageshow-content{
 	position: absolute;
-	top: 40%;
+	top: 33%;
 	text-align: center;
 	width:100%;
 	color: #fff;
@@ -119,6 +145,16 @@ body{
 	background-color: #fff;
 	margin: 22px auto;
 }
+
+.imageshow-background a.learn-more{
+	margin-top: 10px;
+	display: none;
+}
+
+.imageshow-background:hover a.learn-more{
+	display: inline-block;
+}
+
 
 .imageshow-background .blur-background{
 	position:absolute;
@@ -185,7 +221,7 @@ body{
 	-webkit-box-shadow: 0 0 7px #ccc;
 	box-shadow: 0 0 7px #ccc;
 	-moz-box-shadow: 0 0 7px #ccc;
-	z-index: 500;
+	z-index: 10000;
 	font-size: 1em;
 	width:100%;
 	bottom:0px;
@@ -259,4 +295,8 @@ a.footer-link{
 
 .icon{
 	font-size: 16px;
+}
+
+.nav-subheading{
+	text-transform: uppercase;
 }

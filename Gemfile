@@ -32,6 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :production do
+	gem 'pg'
+end
+
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'bxslider-rails'
 gem 'font-awesome-sass-rails'
