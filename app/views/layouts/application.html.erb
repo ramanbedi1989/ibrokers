@@ -5,7 +5,37 @@
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
+
+	<style>
+		#search {
+		}
+
+		#search input[type="text"] {
+		    background: url(/assets/searchwhite.png) no-repeat 10px 6px #fcfcfc;
+		    border: 1px solid #d1d1d1;
+		    font: bold 12px Arial,Helvetica,Sans-serif;
+		    color: #bebebe;
+		    width: 150px;
+		    padding: 6px 15px 6px 35px;
+		    -webkit-border-radius: 20px;
+		    -moz-border-radius: 20px;
+		    border-radius: 20px;
+		    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+		    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+		    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+		    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+		    -webkit-transition: all 0.7s ease 0s;
+		    -moz-transition: all 0.7s ease 0s;
+		    -o-transition: all 0.7s ease 0s;
+		    transition: all 0.7s ease 0s;
+		    }
+
+		   #search input[type="text"]:focus {
+		    width: 200px;
+		    }	
+	</style>
 </head>
+
 <body>
 	<div id="wrap">
 	<div class="container-fluid">
@@ -14,18 +44,21 @@
 				<%= link_to image_tag("IBL Logo.png", alt: "Logo"), root_url %>
 			</div>
 			<div class="col-sm-9 header-height">
-				<div class="pull-right">
+				<div class="pull-right" style="margin-right:60px">
 					<ul class="header-links">
 						<li><a href="#" class="blue-link">File a claim</a></li>
 						<li><a href="#" class="blue-link">Contact us</a></li>
 						<li><a href="#" class="blue-link"><span class="icon icon-facebook"></span></a></li>
 						<li><a href="#" class="blue-link"><span class="icon icon-twitter"></span></a></li>
+						<li><input style="background-color:#E91717; height:35px; border:none; color:#FFFFFF;margin-top:-10px;" type="submit" value="LOG IN"/></li>
+						<li><input style="background-color:#E91717; height:35px; border:none; color:#FFFFFF;margin: -10px 0 0 -9px;" type="submit" value="REGISTER"/></li>
 					</ul>
 				</div>
 			</div>
 		</div>
-		<div class="row subheader-borders">
-			<ul class="nav navbar-nav">
+		
+		<div class="row subheader-borders">			
+			<ul class="nav navbar-nav" style="margin-left:70px">
 				<li class="dropdown">
 					<a class="nav-subheading" <%= link_to 'HOME', root_url %><b></b></a>
 				</li>
@@ -39,8 +72,8 @@
 				<li class="dropdown">
 					<a class="nav-subheading" href="#">SERVICE AND PRODUCTS<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Personal</a></li>
-						<li><a href="#">Business</a></li>
+						<li><%= link_to 'Personal', personal_path %></li>
+						<li><%= link_to 'Business', business_path %></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -53,8 +86,15 @@
 					</ul>
 				</li>
 			</ul>
+
+			<div class="pull-right" style="margin-right:90px;margin-top:6px;">
+				<form method="get" action="#" id="search">
+					<input name="q" type="text" size="40" placeholder="Search..." />
+				</form>
+			</div>	
 		</div>
-	</div>
+	</div>		
+
 	<div class="container-fluid">
 		<%= yield %>	
 	</div>
