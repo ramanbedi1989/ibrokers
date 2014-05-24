@@ -21,6 +21,14 @@
 //= require_tree .
 
 $(function(){
+	ready();
+});
+
+$(document).on('page:load',function(){
+	ready();
+});
+
+function ready(){
 	$(document).scroll(function() {
 		checkOffset();
 	});
@@ -39,7 +47,6 @@ $(function(){
 		}
 	}
 
-	$('.bootstrap-slider').slider();
 	$('.calculator-input').on('keyup change',function(){
 		var cal_output = $('#calculator-output');
 		var sum = 0;
@@ -51,5 +58,24 @@ $(function(){
 			sum += input_val;
 		});
 		cal_output.val("$"+sum);
-	})
-});
+	});
+
+	var slide_margin = 10; 
+	slider = jQuery1_8('.bxslider').bxSlider({
+		infiniteLoop: true,
+  		minSlides: 2,
+  		maxSlides: 2,
+  		moveSlides: 2,
+  		slideWidth: ($('.container-fluid').first().width()/2 - slide_margin),
+  		slideMargin: slide_margin,
+  		pager: false,
+  		auto: true,
+  		pause: 4000,
+  		speed: 1000,
+  		autoHover: true
+	});
+
+	if($('.bootstrap-slider').length != 0){
+		$('.bootstrap-slider').slider();
+	}
+}
