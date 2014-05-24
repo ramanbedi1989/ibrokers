@@ -16,21 +16,40 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-slider
 //= require turbolinks
 //= require_tree .
 
-$(document).scroll(function() {
-    checkOffset();
-});
+$(function(){
+	$(document).scroll(function() {
+		checkOffset();
+	});
 
-$(window).resize(function(){
-	checkOffset();
-});
+	$(window).resize(function(){
+		checkOffset();
+	});
 
-var checkOffset = function(){
-	if($('.arrow-down').offset().top + $('.arrow-down').outerHeight() > $(window).scrollTop() + $(window).height()){
-		$('.fixed-footer').css('position','fixed');
-	}else{
-		$('.fixed-footer').css('position','static');
+	var checkOffset = function(){
+		if($('.fixed-footer').length != 0){
+			if($('.arrow-down').offset().top + $('.arrow-down').outerHeight() > $(window).scrollTop() + $(window).height()){
+				$('.fixed-footer').css('position','fixed');
+			}else{
+				$('.fixed-footer').css('position','static');
+			}
+		}
 	}
-}
+
+	$('.bootstrap-slider').slider();
+	$('.calculator-input').on('keyup change',function(){
+		var cal_output = $('#calculator-output');
+		var sum = 0;
+		$('.calculator-input').each(function(){
+			var input_val = parseInt($(this).val());
+			if(isNaN(input_val)){
+				input_val = 0;
+			}
+			sum += input_val;
+		});
+		cal_output.val("$"+sum);
+	})
+});

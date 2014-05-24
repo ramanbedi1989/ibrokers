@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require bxslider
+ *= require bootstrap-slider
  *= require_tree .
  */
 
@@ -72,9 +73,10 @@ body{
 
 .header-links{
 	padding-top: 5px;
-	margin-right: 10px;
+	margin-right: 70px;
 	list-style-type: none; 
 	float:left;
+	line-height: 32px;
 }
 
 .header-links>li{
@@ -95,6 +97,7 @@ body{
 	background: none;
 	border:0px;
 	font-size: 1.33em;
+	vertical-align: middle;
 }
 
 #search-form{
@@ -299,4 +302,41 @@ a.footer-link{
 
 .nav-subheading{
 	text-transform: uppercase;
+}
+
+.buy-online-tabs{
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	border-radius: 0px 0px 4px 4px;
+	box-shadow: 4px 0px 2px #dddddd, -4px 0px 2px #dddddd;
+	margin-bottom: 10px;
+}
+
+.buy-online-tab-header{
+	text-transform: uppercase;
+}
+
+.buy-online-tabs>.tab-pane{
+	padding-left: 10px;
+}
+
+.buy-online-sidebar{
+	padding-top: 20px;
+}
+
+.buy-online-sidebar .btn-full{
+	margin-bottom: 10px;
+}
+
+.btn-full{
+	width: 100%;
+}
+
+.buy-online-sidebar .glyphicon, .buy-online-sidebar .icon{
+	padding-right: 5px;
+}
+
+.insurance-calculator{
+	font-size: 10px;
 }
