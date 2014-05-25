@@ -1,5 +1,6 @@
 Ibrokers::Application.routes.draw do
 
+  devise_for :users
   get "welcome/index"
   get "/about_us", to: "welcome#about_us"
   get "/why_ibrokers", to: "welcome#why_ibrokers"

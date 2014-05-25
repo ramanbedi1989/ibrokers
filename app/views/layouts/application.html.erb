@@ -8,99 +8,125 @@
 </head>
 
 <body>
+	<div class="sidebar-modal">
+	</div>
+	<div id="login-sidebar" class="sidebar">
+		<button type="button" class="close sidebar-close">&times;</button>
+		<%= render template: 'devise/sessions/new' %>
+	</div>
+
+	<div id="register-sidebar" class="sidebar">
+		<button type="button" class="close sidebar-close">&times;</button>
+		<%= render template: 'devise/registrations/new' %>
+	</div>
 	<div id="wrap">
-	<div class="container-fluid">
-		<div class="header row">
-			<div class="col-sm-3">
-				<%= link_to image_tag("IBL Logo.png", alt: "Logo"), root_url %>
-			</div>
-			<div class="col-sm-9 header-height">
-				<div class="pull-right">
-					<ul class="header-links">
-						<li><a href="#" class="blue-link">File a claim</a></li>
-						<li><a href="#" class="blue-link">Contact us</a></li>
-						<li><a href="#" class="blue-link"><span class="icon icon-facebook"></span></a></li>
-						<li><a href="#" class="blue-link"><span class="icon icon-twitter"></span></a></li>
-						<!-- <li><input style="background-color:#E91717; height:35px; border:none; color:#FFFFFF;margin-top:-10px;" type="submit" value="LOG IN"/></li>
-						<li><input style="background-color:#E91717; height:35px; border:none; color:#FFFFFF;margin: -10px 0 0 -9px;" type="submit" value="REGISTER"/></li> -->
-						<li>
-							<div class="btn-group">
-  								<button type="button" class="btn btn-danger">LOGIN</button>
-  								<button type="button" class="btn btn-danger">REGISTER</button>
-							</div>
-						</li>
-					</ul>
+		<div class="container-fluid">
+			<div class="header row">
+				<div class="col-sm-3">
+					<%= link_to image_tag("IBL Logo.png", alt: "Logo"), root_url %>
+				</div>
+				<div class="col-sm-9 header-height">
+					<div class="pull-right">
+						<ul class="header-links">
+							<li><a href="#" class="blue-link">File a claim</a></li>
+							<li><a href="#" class="blue-link">Contact us</a></li>
+							<li><a href="#" class="blue-link"><span class="icon icon-facebook"></span></a></li>
+							<li><a href="#" class="blue-link"><span class="icon icon-twitter"></span></a></li>
+							<li>
+								<% if user_signed_in? %>
+								<%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+								<% else %>
+								<div class="btn-group">
+									<button type="button" data-sidebar="#login-sidebar" class="btn btn-danger btn-user">LOGIN</button>
+									<button type="button" data-sidebar="#register-sidebar" class="btn btn-danger btn-user">REGISTER</button>
+								</div>
+								<% end %>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
-		
-		<div class="row subheader-borders">			
-			<ul class="nav navbar-nav" style="margin-left:70px">
-				<li class="dropdown">
-					<%= link_to 'HOME', root_url, class: "nav-subheading" %>
-				</li>
-				<li class="dropdown">
-					<a class="nav-subheading" href="#">ABOUT IBL<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><%= link_to 'Vision', about_us_path %></li>
-						<li><%= link_to 'Why Us', why_ibrokers_path %></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a class="nav-subheading" href="#">SERVICE AND PRODUCTS<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><%= link_to 'Personal', personal_path %></li>
-						<li><%= link_to 'Business', business_path %></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a class="nav-subheading" href="#">ADVICE<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Your Risk</a></li>
-						<li><%= link_to 'Why Use A Broker', why_ibrokers_path %></li>
-						<li><a href="#">Insurance Partner</a></li>
-						<li><a href="#">ACC Cover + Extra</a></li>
-					</ul>
-				</li>
-			</ul>
-
-			<!-- <div class="pull-right" style="margin-right:90px;margin-top:6px;">
-				<form method="get" action="#" id="search">
-					<input name="q" type="text" size="40" placeholder="Search..." />
-				</form>
-			</div> -->
-			<form id="search-form" class="nav navbar-form navbar-right" role="search">
-				<div class="form-group">
-					<input type="text" class="search-input" placeholder="Search">
+			<% if notice %>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="alert alert-info alert-dismissable">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						<%= notice %>
+					</div>
 				</div>
-				<button type="submit" class="search-button"><span class="glyphicon glyphicon-search search-icon"></span></button>
-			</form>	
-		</div>
-	</div>		
-
-	<div class="container-fluid">
-		<%= yield %>	
-	</div>
-	</div>
-	<div class="footer container-fluid">
-	<div class="row">
-		<div class="col-sm-12">
-			<div class="pull-left">
-				Copyright &copy; 2011-2014 IBL. All rights reserved.
 			</div>
-			<div class="pull-right">
-				<ul class="footer-links-list">
-					<li>
-						<a href="#" class="blue-link footer-link">Online Privacy and Security Statement</a>
+			<% end %>
+			<% if alert %>
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="alert alert-danger alert-dismissable">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						<%= alert %>
+					</div>
+				</div>
+			</div>
+			<% end %>
+			<div class="row subheader-borders">			
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<%= link_to 'HOME', root_url, class: "nav-subheading" %>
 					</li>
-					<li>
-						<a href="#" class="blue-link footer-link">Usage Agreement</a>
+					<li class="dropdown">
+						<a class="nav-subheading" href="#">ABOUT IBL<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><%= link_to 'Vision', about_us_path %></li>
+							<li><%= link_to 'Why Us', why_ibrokers_path %></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="nav-subheading" href="#">SERVICE AND PRODUCTS<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><%= link_to 'Personal', personal_path %></li>
+							<li><%= link_to 'Business', business_path %></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="nav-subheading" href="#">ADVICE<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Your Risk</a></li>
+							<li><%= link_to 'Why Use A Broker', why_ibrokers_path %></li>
+							<li><a href="#">Insurance Partner</a></li>
+							<li><a href="#">ACC Cover + Extra</a></li>
+						</ul>
 					</li>
 				</ul>
-				
+				<form id="search-form" class="nav navbar-form navbar-right" role="search">
+					<div class="form-group">
+						<input type="text" class="search-input" placeholder="Search">
+					</div>
+					<button type="submit" class="search-button"><span class="glyphicon glyphicon-search search-icon"></span></button>
+				</form>	
 			</div>
+		</div>		
+
+		<div class="container-fluid">
+			<%= yield %>	
 		</div>
-	</div>		
+	</div>
+	<div class="footer container-fluid">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="pull-left">
+					Copyright &copy; 2011-2014 IBL. All rights reserved.
+				</div>
+				<div class="pull-right">
+					<ul class="footer-links-list">
+						<li>
+							<a href="#" class="blue-link footer-link">Online Privacy and Security Statement</a>
+						</li>
+						<li>
+							<a href="#" class="blue-link footer-link">Usage Agreement</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>		
 	</div>
 </body>
 </html>

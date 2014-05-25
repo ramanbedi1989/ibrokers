@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  skip_before_action :authenticate_user!
   def index
   	@slider_categories = [
   		{image: 'assets/carousel-image.png',title: 'Adviser Net' , description: "Our website has changed, but our commitment to you never will.", url: '#'},
@@ -15,4 +16,5 @@ class WelcomeController < ApplicationController
   def why_ibrokers
   	@page_title = "Ibrokers - Why Us"
   end
+
 end

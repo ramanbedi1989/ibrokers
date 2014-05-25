@@ -1,0 +1,16 @@
+<h2>IBrokers Sign In</h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div><%= f.label :email, for: "login-email" %><br />
+  <%= f.email_field :email, autofocus: true, class: "form-control fixed-width-input", id: "login-email" %></div>
+
+  <div><%= f.label :password, for: "login-password" %><br />
+    <%= f.password_field :password, autocomplete: "off", class: "form-control fixed-width-input", id: "login-password" %></div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+
+  <div><%= f.submit "Sign in",class: "btn btn-primary" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
