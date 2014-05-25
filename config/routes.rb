@@ -7,6 +7,10 @@ Ibrokers::Application.routes.draw do
   get "/personal", to: "welcome#personal_ibrokers"
   get "/business", to: "welcome#business_ibrokers"
   get "/buy_online", to: "welcome#buy_online"
+  get "/your_risk", to: "welcome#your_risk"
+  get "/insurance_partner", to: "welcome#insurance_partner"
+  get "/acc_cover", to: "welcome#acc_cover"
+  get "/contact_us", to: "welcome#contact_us"
   root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

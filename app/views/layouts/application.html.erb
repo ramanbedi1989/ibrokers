@@ -29,7 +29,7 @@
 					<div class="pull-right">
 						<ul class="header-links">
 							<li><a href="#" class="blue-link">File a claim</a></li>
-							<li><a href="#" class="blue-link">Contact us</a></li>
+							<li><%= link_to 'Contact us', contact_us_path %></li>
 							<li><a href="#" class="blue-link"><span class="icon icon-facebook"></span></a></li>
 							<li><a href="#" class="blue-link"><span class="icon icon-twitter"></span></a></li>
 							<% if user_signed_in? %>
@@ -86,10 +86,10 @@
 					<li class="dropdown">
 						<a class="nav-subheading" href="#">ADVICE<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Your Risk</a></li>
+							<li><%= link_to 'Your Risk', your_risk_path %></li>
 							<li><%= link_to 'Why Use A Broker', why_ibrokers_path %></li>
-							<li><a href="#">Insurance Partner</a></li>
-							<li><a href="#">ACC Cover + Extra</a></li>
+							<li><%= link_to 'Insurance Partner', insurance_partner_path %></li>
+							<li><%= link_to 'ACC Cover + Extra', acc_cover_path %></li>
 						</ul>
 					</li>
 				</ul>
