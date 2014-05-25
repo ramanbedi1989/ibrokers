@@ -384,11 +384,13 @@ input.fixed-width-input{
 		background: -ms-linear-gradient(top, rgba(32,124,202,1) 0%,rgba(30,87,153,1) 69%,rgba(30,87,153,1) 100%); /* IE10+ */
 		background: linear-gradient(to bottom, rgba(32,124,202,1) 0%,rgba(30,87,153,1) 69%,rgba(30,87,153,1) 100%); /* W3C */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207cca', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
-		 height:120px;
-		 text-align:center;
-		 text-shadow: 1px 1px 6px #333;
-		 color:#FFF;
-		 padding-top:10px;
+		height:120px;
+		text-align:center;
+		text-shadow: 1px 1px 6px #333;
+		color:#FFF;
+		padding-top:10px;
+		margin-left: -15px;
+		margin-right: -15px;
 }
 
 .banner-header{
@@ -398,7 +400,8 @@ input.fixed-width-input{
 		 width: 70%;
 		 margin-top:-25px;
 		 padding-top: 20px;
-		 z-index: 2;
+		 padding-left: 10px;
+		 padding-right: 10px;
 }
 
 .align-right{
