@@ -415,3 +415,15 @@ input.fixed-width-input{
 .align-center{
 	text-align: center;
 }
+
+.insurance-partner-img{
+	padding-left:170px;
+	border: 0 none;
+	height:100%;
+}
+
+.circletag-img{
+border-radius: 150px;
+-moz-border-radius:150px; 
+-webkit-border-radius:150px;
+}
